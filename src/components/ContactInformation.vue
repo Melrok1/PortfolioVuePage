@@ -10,11 +10,7 @@
 
     <transition name="slide" appear>
       <div class="modal" v-if="showModal">
-        <h1>Lorem, ipsum.</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odio omnis magni 
-          cumque expedita, error nemo laboriosam! Ducimus, consequuntur eos.
-        </p>
+        <h1>Medzany 42</h1>
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2615.1812891243185!2d21.147348715593814!3d49.
           045176495490814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ef35528dd2cbb%3A0x1b7c49ecd6ae3a2e!
@@ -27,7 +23,9 @@
           aria-hidden="false" 
           tabindex="0">
         </iframe>
-        <button class="modalBtn" @click="showModal = false">X</button>
+        <button class="modalBtn" @click="showModal = false">
+          <font-awesome-icon :icon="['fas', 'times']" /> 
+        </button>
       </div>
     </transition>
 
@@ -126,10 +124,6 @@ export default {
     gap: 0.25rem;
   }
 
-  /* .contactInformation section {
-    border: 2px solid pink;
-  } */
-
 .contactInformation section h4 {
   color: #fff;
   margin-bottom: 0.5rem;
@@ -163,8 +157,7 @@ section:nth-child(1) button{
     right: 0;
     bottom: 0;
     z-index: 98;
-
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.611);
   }
 
   .fade-enter-active,
@@ -185,18 +178,25 @@ section:nth-child(1) button{
     transform: translate(-50%, -50%);
     width: 500px;
     padding: 25px;
-    background-color: seashell;
+    background: rgba(5, 41, 12, 0.357);
     z-index: 99;
+  }
+
+  .modal h1 {
+    margin-bottom: 1rem;
   }
 
   .modal .modalBtn {
     position: absolute;
     top: 5px;
     right: 5px;
-    padding: 7px;
-    color: rgb(87, 0, 0);
+    /* padding: 7px; */
+    color: #929292;
+    background: #043304;
     font-size: 1.1rem;
-
+    line-height: 1.1rem;
+    width: 30px;
+    height: 30px;
     appearance: none;
     outline: none;
     border: 1px solid #8a8a8a;
