@@ -6,7 +6,7 @@
           <font-awesome-icon :icon="['fab', skill.icon]" /> 
         </div>
         <div class="skillName">{{ skill.name}}</div>
-        <div class="skillPercent">{{ percent }}%</div>
+        <div class="skillPercent">{{ CompInterval(skill.maxPercent) }}%</div>
         <div class="loadingBar">
           <div class="percentage" :style="{'width': skill.maxPercent + '%', 'backgroundColor': 'green'}"></div>
         </div>
@@ -25,10 +25,10 @@ export default {
     return {
       percentage: 0,
       skills: [
-        {name: 'HTML', maxPercent: 85, color: '#e44d26', icon: 'html5'},
-        {name: 'CSS', maxPercent: 90, color: '#1572b6', icon: 'css3-alt'},
+        {name: 'HTML', maxPercent: 90, color: '#e44d26', icon: 'html5'},
+        {name: 'CSS', maxPercent: 85, color: '#1572b6', icon: 'css3-alt'},
         {name: 'JS', maxPercent: 52, color: '#ffca28', icon: 'js'},
-        {name: 'Vue.js', maxPercent: 60, color: '#41b883', icon: 'vuejs'},
+        {name: 'Vue.js', maxPercent: 50, color: '#41b883', icon: 'vuejs'},
         {name: 'Node.js', maxPercent: 42, color: '#8cc84b', icon: 'node-js'},
         {name: 'Git', maxPercent: 41, color: '#777777', icon: 'github'},
       ]
@@ -40,10 +40,13 @@ export default {
     },
   },
   methods: {        
-    // CompInterval(data) {
-    //   let p = 0;
-    //   console.log('prijate data' + data);
-    // }
+    CompInterval(data) {
+      if(this.percent < data) {
+        return this.percent
+      }else {
+        return data
+      } 
+    }
   },
   created() {
     let interval = setInterval(() => {

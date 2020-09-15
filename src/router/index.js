@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import About from '../views/About.vue'
 import Contact from '@/views/Contact.vue'
-import Portfolio from '@/views/Portfolio.vue'
+import Work from '@/views/Work.vue'
 import Login from '@/views/Login.vue'
 
 Vue.use(VueRouter)
@@ -10,8 +10,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'About',
+    component: About
   },
   {
     path: '/contact',
@@ -19,9 +19,9 @@ const routes = [
     component: Contact
   },
   {
-    path: '/portfolio',
-    name: 'Portfolio',
-    component: Portfolio
+    path: '/work',
+    name: 'Work',
+    component: Work
   },
   {
     path: '/login',
