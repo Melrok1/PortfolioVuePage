@@ -1,13 +1,18 @@
 <template>
   <div class="home">
     <h1>Home page</h1>
+    <skillBar />
   </div>
 </template>
 
 <script>
+import skillBar from '@/components/AboutSkillsBar'
 
 export default {
   name: 'Home',
+  components: {
+    skillBar
+  },
   data() {
     return {
 
