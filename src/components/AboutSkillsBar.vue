@@ -51,7 +51,7 @@ export default {
   created() {
     let interval = setInterval(() => {
       if(this.percentage < 100) {
-        this.percentage += 0.2
+        this.percentage += 0.3
       }else {
         clearInterval(interval)
       }
