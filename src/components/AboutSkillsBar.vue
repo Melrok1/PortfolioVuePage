@@ -65,7 +65,7 @@ export default {
 
 <style scoped>
   .mainSkillSection {
-    width: 30%;
+    width: 300px;
     margin: 2rem auto;
     padding: 1rem;
     background: rgba(5, 41, 12, 0.357);
@@ -86,9 +86,10 @@ export default {
 
   .iconWrap {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding-left: 10px;
+    /* padding-left: 10px; */
+    width: 53px;
     font-size: 2.5rem;
     grid-column: 1 / 2;
     grid-row: 1 / 3;
@@ -110,9 +111,9 @@ export default {
   .loadingBar {
     grid-column: 2 / 6;
     grid-row: 2 / 3;
-
+    margin: 0 auto;
     position: relative;
-    width: 100%;
+    width: 95%;
     height: 10px;
     border-radius: 5px;
     overflow: hidden;

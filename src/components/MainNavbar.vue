@@ -35,12 +35,12 @@ export default {
 
 .mainNavbar a {
   display: inline-block;
-  font-weight: bold;
+  font-weight: 900;
   text-decoration: none;
   color: #20b01e;
   transition: 0.3s;
-  letter-spacing: 4px;
-  font-size: 1rem;
+  letter-spacing: 3px;
+  font-size: 0.6rem;
   margin: 0.5rem;
   padding: 0.5rem 0.75rem;
   text-transform: uppercase;

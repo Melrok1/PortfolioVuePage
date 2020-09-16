@@ -31,15 +31,19 @@ export default {
 <style scoped>
 
   .contact {
-    min-height: calc(100vh - 83px);
+    min-height: calc(100vh - 76px);
     background: transparent;
     color: #b7b7b7;
     padding: 2rem 1rem;
-    /* background: url('../assets/stripeBg-compress.jpg') no-repeat fixed center;
-    background-size: cover; */
+    background-color: #2b2b2b;
+    background-image: url('../assets/stripeBg-compress.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
   }
 
-  .contact::after {
+  /* .contact::after {
     content: "";
     background: #2b2b2b;
     background: url('../assets/stripeBg-compress.jpg') no-repeat fixed center;
@@ -51,5 +55,5 @@ export default {
     right: 0;
     position: absolute;
     z-index: -1;   
-  }
+  } */
 </style>

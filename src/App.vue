@@ -23,12 +23,40 @@ export default {
 </script>
 
 
+
+
 <style>
 *, *::before, *::after {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
 }
+
+
+/* Firefox scrollbar  */
+* {
+  scrollbar-width: thin;          /* "auto" or "thin"  */
+  scrollbar-color: #167914 #3a3a3a;   /* scroll thumb & track */
+}
+/* Scrollbar */
+/* width */
+body::-webkit-scrollbar {
+  width: 6px;
+}
+/* track */
+body::-webkit-scrollbar-track {
+  background: #3a3a3a; 
+}
+/* handle */
+body::-webkit-scrollbar-thumb {
+  background: #167914; 
+  box-shadow: inset 0 0 5px grey;
+}
+/* handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #20b01e;
+}
+
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -37,4 +65,6 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+
 </style>
