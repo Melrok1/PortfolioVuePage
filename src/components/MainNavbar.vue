@@ -1,15 +1,23 @@
 <template>
   <div class="mainNavbar">
-    <router-link to="/">About</router-link> 
-    <router-link to="/work">Work</router-link> 
-    <router-link to="/contact">Contact</router-link>
-    <router-link to="/login">Login</router-link>
+    <div class="navRouterWrap">
+      <router-link to="/">About</router-link> 
+      <router-link to="/work">Work</router-link> 
+      <router-link to="/contact">Contact</router-link>
+      <router-link to="/login">Login</router-link>
+    </div>
+    <menuBtn class="menuBtn" />
   </div>
 </template>
 
 <script>
+import menuBtn from '@/components/MainNavbarMenuBtn'
+
 export default {
   name: 'MainNavbar',
+  components:{
+    menuBtn
+  },
   data() {
     return {
 
@@ -24,9 +32,9 @@ export default {
 .mainNavbar {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
-  padding: 2px 30px 30px 30px;
+  padding: 16px 16px 16px 30px;
   background: #1f1f1f;
   border-bottom: 1px solid #20b01e;
   box-shadow: 2px 2px 2px black;
@@ -54,6 +62,24 @@ export default {
               0 0 25px #20b01e,
               0 0 50px #20b01e,
               0 0 200px #20b01e;
+}
+
+.menuBtn {
+  display: none;
+}
+
+
+  /* media queries */
+
+
+@media (max-width: 650px) {
+
+    .menuBtn {
+      display: inline-block;
+    }
+    .navRouterWrap {
+      display: none;
+    }
 }
 
 </style>
