@@ -26,6 +26,9 @@ export default {
 
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
+
+
 *, *::before, *::after {
   padding: 0px;
   margin: 0px;
@@ -58,9 +61,13 @@ export default {
   background: #20b01e;
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

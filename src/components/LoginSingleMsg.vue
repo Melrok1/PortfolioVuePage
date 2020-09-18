@@ -1,12 +1,14 @@
 <template>
   <div class="singleMsg">
     <header @click="classb = !classb" :class="{redClass: classb}">
-      <span class="number">{{ index + 1 }} / {{msgLength}}</span>
       <h4 class="date"> {{ msg.formatedDate }}</h4>
       <h4 class="name">{{ msg.name }}</h4>
+      <span class="number">{{ index + 1 }} / {{msgLength}}</span>
       <h4 class="email"><font-awesome-icon :icon="['fas', 'envelope']" /> {{ msg.email }}</h4> 
     </header>
-    <article v-if="false">
+    <article v-if="classb">
+      <span>name: {{ msg.name }}</span>
+      <span>email: {{ msg.email }}</span>
       <p>{{ msg.message }}</p>
       <span>ID: {{ msg.id }}</span>
     </article>
@@ -37,16 +39,23 @@ export default {
   .singleMsg {
     width: 50%;
     background: rgba(13, 48, 4, 0.241);
-    margin: 1rem auto;
+    margin: 0.3rem auto;
     text-align: left;
     border: 1px solid rgba(23, 90, 6, 0.35);
-    overflow-x: auto;
+    /* overflow-x: auto; */
   }
 
   .singleMsg header{
     position: relative;
     background: rgba(23, 90, 6, 0.35);
     padding: 4px 15px;
+    cursor: pointer;
+  }
+
+  .singleMsg header:hover{
+    background: rgba(32, 176, 30, 0.639);
+    box-shadow: 0 0 5px #20b01e,
+                0 0 25px #20b01e;
   }
 
 
@@ -69,11 +78,16 @@ export default {
   }
 
   .singleMsg .number {
-    display: none;
+    font-weight: 200;
+    font-size: 0.8rem;
+    position: absolute;
+    right: 5px;
+    top: 0px;
   }
 
   .singleMsg .date,
-  .singleMsg .name {
+  .singleMsg .name,
+  .singleMsg .number {
     display: inline-block;
   }
 
@@ -83,15 +97,17 @@ export default {
 
   .singleMsg article p {
     margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .singleMsg article span {
     font-size: 0.7rem;
     font-weight: 200;
+    display: block;
   }
 
   .redClass {
-    background: red !important;
+    background: rgba(32, 176, 30, 0.639) !important;
   }
 
 
