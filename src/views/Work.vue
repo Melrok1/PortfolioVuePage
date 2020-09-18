@@ -149,11 +149,11 @@ export default {
 
 .portfolio section {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -173,7 +173,6 @@ export default {
 .portfolio section h1 {
   text-align: center;
   font-size: 5rem;
-  background: rgba(19, 60, 3, 0.7);
   padding: 5px 15px;
 }
 

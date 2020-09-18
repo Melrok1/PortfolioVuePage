@@ -1,31 +1,71 @@
 <template>
   <div class="contactForm">
-    <form>
+
+    <form @submit.prevent="addDataToFirestore">
+      <!-- Full name -->
       <label for="InputName">Full Name (required)</label>
-      <input type="text" name="InputName" required>
+      <input type="text" name="InputName" v-model="name" required>
+      <!-- Email -->
       <label for="inputEmail">E-mail (required)</label>
-      <input type="email" name="InputName" required>
+      <input type="email" name="InputName" v-model="email" required>
+      <!-- Phone number -->
       <label for="InputPhone">Phone number (optional)</label>
-      <input type="tel" name="InputPhone">
+      <input type="tel" name="InputPhone" v-model="phoneNumber">
+      <!-- Text AREA -->
       <label for="InputTextarea">Message</label>
-      <textarea name="InputTextarea" id="" cols="30" rows="8"></textarea>
+      <textarea name="InputTextarea" id="" cols="30" rows="8" v-model="message"></textarea>
+      <!-- Submit BTN -->
       <div class="buttonWrap">
         <button type="submit" id="submitButton">Submit</button>
       </div>
     </form>
+
   </div>
 </template>
 
+
+
 <script>
+import {db} from '@/firebase/init.js';
+
 export default {
   name: 'ContactForm',
   data() {
     return {
-
+      name: null,
+      email: null,
+      phoneNumber: null,
+      message: null
+    }
+  },
+  methods: {
+    addDataToFirestore() {
+      console.log(this.computedData)
+      db.collection('message')
+        .doc(Number(this.computedData.date).toString())
+        .set(this.computedData)
+        .then(() => {
+          console.log('ok')
+          console.log(Number(this.computedData.date).toString())
+        })
+        .catch((err) => console.log('addDataToFirestore ERR' + err))
+    },
+  },
+  computed: {
+    computedData() {
+      return {
+        name: this.name,
+        email: this.email,
+        phoneNumber: this.phoneNumber,
+        message: this.message,
+        date: new Date()
+      }
     }
   }
 }
 </script>
+
+
 
 <style scoped>
   .contactForm {

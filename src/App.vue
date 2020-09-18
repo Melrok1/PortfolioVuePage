@@ -40,20 +40,21 @@ export default {
 }
 /* Scrollbar */
 /* width */
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 /* track */
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: #3a3a3a; 
 }
 /* handle */
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background: #167914; 
   box-shadow: inset 0 0 5px grey;
 }
 /* handle on hover */
-body::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover {
   background: #20b01e;
 }
 

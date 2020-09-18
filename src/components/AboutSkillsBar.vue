@@ -90,7 +90,7 @@ export default {
     align-items: center;
     /* padding-left: 10px; */
     width: 53px;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     grid-column: 1 / 2;
     grid-row: 1 / 3;
   }
