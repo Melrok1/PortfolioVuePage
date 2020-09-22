@@ -16,7 +16,9 @@
       <textarea name="InputTextarea" id="" cols="30" rows="8" v-model="message"></textarea>
       <!-- Submit BTN -->
       <div class="buttonWrap">
-        <button type="submit" id="submitButton">Submit</button>
+        <button type="submit" id="submitButton" >
+          <font-awesome-icon :icon="['fas', 'paper-plane']"/> Send
+        </button>
       </div>
     </form>
 
