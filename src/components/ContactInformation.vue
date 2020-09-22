@@ -34,11 +34,11 @@
       <!-- ADRESS -->
       <section>
         <div class="iconWrap">
-          <button class="faIconButton" @click="showModal = true">
+          <a href="#" class="faIconButton" @click="showModal = true">
             <font-awesome-icon :icon="['fas', 'map-marker-alt']"/>
-          </button>
+          </a>
         </div>
-        <h4>Adress:</h4>
+        <h4 v-if="false">Adress:</h4>
         <p>
           Medzany 42 - 082 21 - Slovakia
         </p>
@@ -47,22 +47,22 @@
       <!-- E MAIL -->
       <section>
         <div class="iconWrap">
-          <button class="faIconButton">
+          <a href="mailto:martin.blascak86@gmail.com" class="faIconButton">
             <font-awesome-icon :icon="['fas', 'at']" /> 
-          </button>
+          </a>
         </div>
-        <h4>E-mail:</h4>
+        <h4 v-if="false">E-mail:</h4>
         <p>martin.blascak86@gmail.com</p>
       </section>
 
       <!-- PHONE NUMBER -->
       <section>
         <div class="iconWrap">
-          <button class="faIconButton">
+          <a href="tel:+421904413434" class="faIconButton">
             <font-awesome-icon :icon="['fas', 'phone']" />
-          </button>
+          </a>
         </div>
-        <h4>PhoneNumber:</h4>
+        <h4 v-if="false">PhoneNumber:</h4>
         <p>+421 904 413 434</p>
       </section>
 
@@ -73,7 +73,7 @@
             <font-awesome-icon :icon="['fab', 'facebook-messenger']" />
           </button>
         </div>
-        <h4>Messenger:</h4>
+        <h4 v-if="false">Messenger:</h4>
         <p>???</p>
       </section>
 
@@ -216,13 +216,15 @@ export default {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 5px;
-  right: 5px;
-  color: #929292;
+  top: 80px;
+  right: 50%;
+  /* right: 5px; */
+  /* transform: translateX(-50%); */
+  color: #e8e8e8;
   background: #043304;
   font-size: 1.1rem;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   appearance: none;
   outline: none;
   border: 1px solid #8a8a8a;
@@ -245,21 +247,21 @@ export default {
 @media (max-width: 400px) {
 
   .contactInformation {
-    padding-left: 20px;
+    padding-left: 0px;
   }
 
-  .contactSectionWraper section  {
+  /* .contactSectionWraper section  {
     flex-direction: column;
-  }
+  } */
 
 }
 
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
 
-  .faIconButton {
+  /* .faIconButton {
     display: none;
-  }
+  } */
 
 }
 

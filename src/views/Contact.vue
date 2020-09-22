@@ -67,7 +67,7 @@ export default {
     top: 0;
     left: -15%;
     width: 60%;
-    min-height: 100%;
+    height: 2000px;
     background: #383737;
     z-index: -1;
     transform: skewX(-15deg)

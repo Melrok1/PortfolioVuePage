@@ -168,9 +168,7 @@ export default {
   background-color: #20b01e;
   color: #3a3a3a;
   box-shadow: 0 0 5px #20b01e,
-              0 0 25px #20b01e,
-              0 0 50px #20b01e,
-              0 0 200px #20b01e;
+              0 0 25px #20b01e;
 }
 
 
