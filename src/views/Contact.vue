@@ -1,8 +1,11 @@
 <template>
   <div class="contact">
-    <contactInformation/>
-    <!-- <h1>This is an contact page</h1> -->
-    <contactForm/>
+    <section class="contactInformationSection">
+      <contactInformation/> 
+    </section>
+    <section class="contactFormSection">
+      <contactForm/>
+    </section>
   </div>
 </template>
 
@@ -32,28 +35,79 @@ export default {
 
   .contact {
     min-height: calc(100vh - 76px);
-    background: transparent;
     color: #b7b7b7;
-    padding: 2rem 1rem;
+    padding: 1rem;
     background-color: #2b2b2b;
-    background-image: url('../assets/stripeBg-compress.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: row;
+
+    overflow-x: hidden;
   }
 
-  /* .contact::after {
-    content: "";
-    background: #2b2b2b;
-    background: url('../assets/stripeBg-compress.jpg') no-repeat fixed center;
-    background-size: cover;
-    opacity: 0.95;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;   
+  .contactInformationSection,
+  .contactFormSection {
+    width: 50%;
+    /* border: 1px solid white; */
+  }
+
+  .contactInformationSection {
+    padding-top: 2rem;
+    /* background: red; */
+  }
+
+  /* .contactFormSection {
+    background: rgb(244, 0, 252);
   } */
+
+
+  /* .contactInformationSection::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -15%;
+    width: 60%;
+    min-height: 100%;
+    background: #383737;
+    z-index: -1;
+    transform: skewX(-15deg)
+  }; */
+
+  /* .contact .contactInformation {
+    clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0 100%);
+    background: #383737;
+  }
+
+  .contact .contactForm {
+    clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0 100%);
+    background: #383737;
+  } */
+
+
+
+    /* media queries */
+
+@media (max-width: 400px) {
+
+  .contactInformationSection {
+    padding-top: 0px;
+  }
+
+}
+
+@media (max-width: 870px) {
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contactInformationSection,
+  .contactFormSection {
+    width: 100%;
+  }
+
+}
+
+
 </style>

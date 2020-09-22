@@ -76,9 +76,9 @@ export default {
 
   .contactForm form {
     /* border: 1px solid #20b01e; */
-    width: 50%;
+    width: 85%;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1rem 1rem 3rem 1rem;
   }
 
   .contactForm label {
@@ -105,7 +105,7 @@ export default {
     display: block;
   }
 
-  #app > div.contact > div > form > textarea {
+  .contactForm form textarea {
     width: 85%;
     margin: 1rem auto;
     padding: 0.5rem;
@@ -171,6 +171,15 @@ export default {
               0 0 25px #20b01e,
               0 0 50px #20b01e,
               0 0 200px #20b01e;
+}
+
+
+@media (max-width: 1000px) {
+  
+  .contactForm form {
+    width: 98%;
+  }
+
 }
 
 
