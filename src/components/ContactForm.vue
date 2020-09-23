@@ -1,7 +1,7 @@
 <template>
   <div class="contactForm">
 
-    <form @submit.prevent="addDataToFirestore">
+    <form @submit.prevent="addDataToFirestore" v-show="show">
       <!-- Full name -->
       <label for="InputName">Full Name (required)</label>
       <input type="text" name="InputName" v-model="name" required>
@@ -16,11 +16,15 @@
       <textarea name="InputTextarea" id="" cols="30" rows="8" v-model="message"></textarea>
       <!-- Submit BTN -->
       <div class="buttonWrap">
-        <button type="submit" id="submitButton" >
+        <button type="submit" id="submitButton" @click="show = false">
           <font-awesome-icon :icon="['fas', 'paper-plane']"/> Send
         </button>
       </div>
     </form>
+    
+    <div class="afterSendMsg" v-show="!show">
+      <p>Message sent thank you</p>
+    </div>
 
   </div>
 </template>
@@ -34,6 +38,7 @@ export default {
   name: 'ContactForm',
   data() {
     return {
+      show: true,
       name: null,
       email: null,
       phoneNumber: null,

@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import menuBtn from '@/components/MainNavbarMenuBtn'
+import menuBtn from '@/components/MainNavbarMenuBtn';
 
 export default {
   name: 'MainNavbar',
@@ -29,7 +29,8 @@ export default {
   },
   data() {
     return {
-      showRespMenu: true
+      showRespMenu: true,
+      user: null
     }
   }
 }

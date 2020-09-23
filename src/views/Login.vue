@@ -1,17 +1,26 @@
 <template>
   <div class="login">
-    <!-- <button @click="toggle = !toggle">Show</button> -->
+
+<!-- Message section -->
     <div class="msgWraper" v-if="toggle">
-      <button class="btnLog" @click="logout()">Logout</button>
+      
+      <header>
+        <p>{{ user }}</p>
+        <button class="btnLog" @click="logout()">Logout</button>
+      </header>
+
       <div 
         v-for="(msg, index) in messageData.slice().reverse()"
         :key="index">
         <singleMsg :msg="msg" :index="index" :msgLength="sumAllMsg"/>
       </div>
     </div>
+
+<!-- Login -->
     <div class="loginFormWraper" v-if="!toggle" v-scrollAnimation>
       <loginForm />
     </div>
+
   </div>
 </template>
 
@@ -29,13 +38,13 @@ export default {
     return {
       messageData: [],
       toggle: false,
+      user: null,
     }
   },
   methods: {
     logout() {
         auth.signOut()
           .then(
-            // () => {this.$router.reload()},
             () => {console.log('user log out')}
           )
     }
@@ -68,6 +77,7 @@ export default {
       }),
     auth.onAuthStateChanged(user => {
       this.toggle = !!user;
+      this.user = user.email;
     })
   }
 }
@@ -80,17 +90,26 @@ export default {
     background: #2b2b2b;
     color: #b7b7b7;
     padding: 2rem 1rem;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
   }
 
-  p {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    /* border: 1px solid white; */
+    padding: 0rem 2rem 1.2rem 2rem;
+  }
+
+  header p {
+    color: white;
+  }
+
+  /* p {
     margin: 2rem;
     border: 2px solid #fff;
     padding: 10px;
-  }
+  } */
 
   .loginFormWraper {
     width: 100%;
@@ -124,12 +143,10 @@ export default {
 /* Login form animation */
   .before-enter {
     opacity: 0;
-    /* transform:translateX(100px); */
     transition: all 2s ease-in-out;
   }
   
   .enter {
     opacity: 1;
-    /* transform:translateX(0px); */
   }
 </style>
